@@ -105,6 +105,7 @@ function renderResults() {
 mainElem.addEventListener('click', handleClick);
 
 new Product('Banana Slicer', 'banana', 'img/assets/banana.jpg');
+new Product('Robot Bag', 'bag', 'img/assets/bag.jpg');
 new Product('Bathroom Ipad Stand','bathroom', 'img/assets/bathroom.jpg');
 new Product('Open Toe Rain Boots', 'boots' ,'img/assets/boots.jpg');
 new Product('All-in-one Breakfast Maker', 'breakfast' ,'img/assets/breakfast.jpg');
