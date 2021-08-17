@@ -26,11 +26,6 @@
 // Product.allProducts.push(this);
 // }
 
-// function getRandomNumber() {
-//   let allProductIndex = Math.floor((Math.random() * Product.allProducts.length));
-//   return allProductIndex;
-// }
-
 // function pickThreeProducts() {
 //   let leftProductIndex = Math.floor((Math.random() * Product.allProducts.length));
 //   leftProduct = Product.allProducts[leftProductIndex];
@@ -109,28 +104,6 @@
 
 // mainElem.addEventListener('click', handleClick);
 
-// new Product('Banana Slicer', 'banana', 'img/assets/banana.jpg');
-// new Product('Bathroom Ipad Stand','bathroom', 'img/assets/bathroom.jpg');
-// new Product('Open Toe Rain Boots', 'boots' ,'img/assets/boots.jpg');
-// new Product('All-in-one Breakfast Maker', 'breakfast' ,'img/assets/breakfast.jpg');
-// new Product('Meatball Bubblegum', 'bubblegum' ,'img/assets/bubblegum.jpg');
-// new Product('Chair', 'chair' ,'img/assets/chair.jpg');
-// new Product('Cthulu Action Figure', 'cthulhu', 'img/assets/cthulhu.jpg');
-// new Product('Duck Bill Dog Muzzle', 'dog-duck' ,'img/assets/dog-duck.jpg');
-// new Product('Dragon Meat', 'dragon' ,'img/assets/dragon.jpg');
-// new Product('Utensil Pens', 'pen' ,'img/assets/pen.jpg');
-// new Product('Pet Sweeper', 'pet-sweep' ,'img/assets/pet-sweep.jpg');
-// new Product('Pizza Scissors', 'scissors' ,'img/assets/scissors.jpg');
-// new Product('Shark Sleeping Bag', 'shark' ,'img/assets/shark.jpg');
-// new Product('Baby Onesie Sweeper', 'sweep' ,'../img/assets/sweep.png');
-// new Product('Tauntaun Sleeping Bag', 'tauntaun' ,'../img/assets/tauntaun.jpg');
-// new Product('Unicorn Meat', 'unicorn','../img/assets/unicorn.jpg');
-// new Product('Perpetual Watering Can', 'water-can','../img/assets/water-can.jpg');
-// new Product('Wine Glass With Hole', 'wine-glass','../img/assets/wine-glass.jpg');
-
-// pickThreeProducts();
-
-// console.log(Product.allProducts);
 
 'use strict';
 
@@ -148,7 +121,6 @@ let clicksAllowed = 25;
 // constructor
 function Products(name, fileExtension = 'jpg') {
   this.name = name;
-  this.src = `img/${name}.${fileExtension}`;
   this.views = 0;
   this.clicks = 0;
   allProducts.push(this);
@@ -204,27 +176,8 @@ function renderResults() {
     ul.appendChild(li);
   }
 }
-new Products('Banana Slicer', 'banana', 'img/assets/banana.jpg');
-new Products('Bathroom Ipad Stand','bathroom', 'img/assets/bathroom.jpg');
-new Products('Open Toe Rain Boots', 'boots' ,'img/assets/boots.jpg');
-new Products('All-in-one Breakfast Maker', 'breakfast' ,'img/assets/breakfast.jpg');
-new Products('Meatball Bubblegum', 'bubblegum' ,'img/assets/bubblegum.jpg');
-new Products('Chair', 'chair' ,'img/assets/chair.jpg');
-new Products('Cthulu Action Figure', 'cthulhu', 'img/assets/cthulhu.jpg');
-new Products('Duck Bill Dog Muzzle', 'dog-duck' ,'img/assets/dog-duck.jpg');
-new Products('Dragon Meat', 'dragon' ,'img/assets/dragon.jpg');
-new Products('Utensil Pens', 'pen' ,'img/assets/pen.jpg');
-new Products('Pet Sweeper', 'pet-sweep' ,'img/assets/pet-sweep.jpg');
-new Products('Pizza Scissors', 'scissors' ,'img/assets/scissors.jpg');
-new Products('Shark Sleeping Bag', 'shark' ,'img/assets/shark.jpg');
-new Products('Baby Onesie Sweeper', 'sweep' ,'../img/assets/sweep.png');
-new Products('Tauntaun Sleeping Bag', 'tauntaun' ,'../img/assets/tauntaun.jpg');
-new Products('Unicorn Meat', 'unicorn','../img/assets/unicorn.jpg');
-new Products('Perpetual Watering Can', 'water-can','../img/assets/water-can.jpg');
-new Products('Wine Glass With Hole', 'wine-glass','../img/assets/wine-glass.jpg');
 
 console.log(allProducts);
 renderProducts();
 
 myContainer.addEventListener('click', handleProductClick);
-myButton.addEventListener('click', renderResults);
