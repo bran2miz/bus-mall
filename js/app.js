@@ -104,27 +104,6 @@
 
 // mainElem.addEventListener('click', handleClick);
 
-// new Products('Banana Slicer', 'banana', 'img/assets/banana.jpg');
-// new Products('Robot Bag', 'bag', 'img/assets/bag.jpg');
-// new Products('Bathroom Ipad Stand','bathroom', 'img/assets/bathroom.jpg');
-// new Products('Open Toe Rain Boots', 'boots' ,'img/assets/boots.jpg');
-// new Products('All-in-one Breakfast Maker', 'breakfast' ,'img/assets/breakfast.jpg');
-// new Products('Meatball Bubblegum', 'bubblegum' ,'img/assets/bubblegum.jpg');
-// new Products('Chair', 'chair' ,'img/assets/chair.jpg');
-// new Products('Cthulu Action Figure', 'cthulhu', 'img/assets/cthulhu.jpg');
-// new Products('Duck Bill Dog Muzzle', 'dog-duck' ,'img/assets/dog-duck.jpg');
-// new Products('Dragon Meat', 'dragon' ,'img/assets/dragon.jpg');
-// new Products('Utensil Pens', 'pen' ,'img/assets/pen.jpg');
-// new Products('Pet Sweeper', 'pet-sweep' ,'img/assets/pet-sweep.jpg');
-// new Products('Pizza Scissors', 'scissors' ,'img/assets/scissors.jpg');
-// new Products('Shark Sleeping Bag', 'shark' ,'img/assets/shark.jpg');
-// new Products('Baby Onesie Sweeper', 'sweep' ,'../img/assets/sweep.png');
-// new Products('Tauntaun Sleeping Bag', 'tauntaun' ,'../img/assets/tauntaun.jpg');
-// new Products('Unicorn Meat', 'unicorn','../img/assets/unicorn.jpg');
-// new Products('Perpetual Watering Can', 'water-can','../img/assets/water-can.jpg');
-// new Products('Wine Glass With Hole', 'wine-glass','../img/assets/wine-glass.jpg');
-
-// pickThreeProducts();
 
 'use strict';
 
@@ -142,7 +121,6 @@ let clicksAllowed = 25;
 // constructor
 function Products(name, fileExtension = 'jpg') {
   this.name = name;
-  this.src = `../img/assets/${name}.${fileExtension}`;
   this.views = 0;
   this.clicks = 0;
   allProducts.push(this);
@@ -198,29 +176,8 @@ function renderResults() {
     ul.appendChild(li);
   }
 }
-new Products ('bag');
-new Products ('banana');
-new Products ('bathroom');
-new Products ('boots');
-new Products ('breakfast');
-new Products ('bubblegum');
-new Products ('chair');
-new Products ('cthulhu');
-new Products ('dog-duck');
-new Products ('dragon');
-new Products ('pen');
-new Products ('pet-sweep');
-new Products ('scissors');
-new Products ('shark');
-new Products ('sweep', 'png');
-new Products ('tauntaun');
-new Products ('unicorn');
-new Products ('water-can');
-new Products ('wine-glass');
-
 
 console.log(allProducts);
 renderProducts();
 
 myContainer.addEventListener('click', handleProductClick);
-myButton.addEventListener('click', renderResults);
