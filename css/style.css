@@ -147,3 +147,9 @@ section + div.clicks-allowed {
 section + div.clicks-allowed:hover {
   background-color: aliceblue;
 }
+
+ canvas {
+  max-width = 500px;
+  max-height = 300px;
+  margin:auto;
+}
