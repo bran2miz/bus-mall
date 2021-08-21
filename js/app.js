@@ -10,25 +10,26 @@ let image3 = document.querySelector('section img:nth-child(3)');
 let clicks = 0;
 let clicksAllowed = 25;
 let indexArray = [];
-let uniqueNumberOfIndexes= 6;
+let uniqueNumberOfIndexes = 6;
 
 // constructor
-function Products(name, fileExtension = 'jpg') {
+function Products( name, fileExtension = 'jpg') {
   this.name = name;
   this.src = `img/assets/${name}.${fileExtension}`;
   this.views = 0;
   this.clicks = 0;
   allProducts.push(this);
 }
+
 function selectRandomProduct() {
   return Math.floor(Math.random() * allProducts.length);
 }
 
 function renderProducts() {
   // call the selectRandomProduct
-  while(indexArray.length < uniqueNumberOfIndexes) {
+  while (indexArray.length < uniqueNumberOfIndexes) {
     let randomNumber = selectRandomProduct();
-    if (!indexArray.includes(randomNumber)){
+    if (!indexArray.includes(randomNumber)) {
       indexArray.push(randomNumber);
     }
   }
@@ -53,6 +54,21 @@ function renderProducts() {
   allProducts[prod3].views++;
 
 }
+
+function storeAProduct () {
+  let stringifyProducts = JSON.stringify(allProducts);
+  localStorage.setItem('productstorage',stringifyProducts);
+}
+// check if local storage
+function getProducts(){
+  let potentialProducts = localStorage.getItem('productstorage');
+  if(potentialProducts){
+    let parsedProducts = JSON.parse(potentialProducts);
+    allProducts = parsedProducts;
+    
+  }
+}
+
 function handleProductClick(event) {
   if (event.target === myContainer) {
     alert('Please click on an image');
@@ -68,10 +84,12 @@ function handleProductClick(event) {
   }
   renderProducts();
   if (clicks === clicksAllowed) {
-    
+
     myContainer.removeEventListener('click', handleProductClick);
     renderChart();
+    storeAProduct();
   }
+  // storeProducts();
 }
 // function renderResults() {
 //   let ul = document.querySelector('ul');
@@ -82,25 +100,25 @@ function handleProductClick(event) {
 //   }
 // }
 
-new Products ('bag');
-new Products ('banana');
-new Products ('bathroom');
-new Products ('boots');
-new Products ('breakfast');
-new Products ('bubblegum');
-new Products ('chair');
-new Products ('cthulhu');
-new Products ('dog-duck');
-new Products ('dragon');
-new Products ('pen');
-new Products ('pet-sweep');
-new Products ('scissors');
-new Products ('shark');
-new Products ('sweep', 'png');
-new Products ('tauntaun');
-new Products ('unicorn');
-new Products ('water-can');
-new Products ('wine-glass');
+new Products('bag');
+new Products('banana');
+new Products('bathroom');
+new Products('boots');
+new Products('breakfast');
+new Products('bubblegum');
+new Products('chair');
+new Products('cthulhu');
+new Products('dog-duck');
+new Products('dragon');
+new Products('pen');
+new Products('pet-sweep');
+new Products('scissors');
+new Products('shark');
+new Products('sweep', 'png');
+new Products('tauntaun');
+new Products('unicorn');
+new Products('water-can');
+new Products('wine-glass');
 
 console.log(allProducts);
 renderProducts();
@@ -147,8 +165,36 @@ function renderChart() {
   let myChart = new Chart(ctx, chartObject);
 }
 
+function makeAProduct(name, fileExtension = 'jpg', views, clicks) {
+  let productObj = new Products();
+  allProducts.push(productObj);
+  productObj.renderProducts();
+}
 
+function storeProducts() {
+  let stringifiedProducts = JSON.stringify(allProducts);
+  localStorage.setItem('products', stringifiedProducts);
+  console.log(stringifiedProducts);
+}
+
+function getProducts() {
+  let potentialProducts = localStorage.getItem('products');
+  if (potentialProducts) {
+    let parsedProducts = JSON.parse(potentialProducts);
+    allProducts = potentialProducts;
+    console.log(potentialProducts);
+    for (let product of parsedProducts) {
+      let name = product.name;
+      let fileExtension = product.fileExtension;
+      let views = product.views;
+      let clicks = product.clicks;
+
+      Products(name, fileExtension, views, clicks);
+    }
+  }
+}
 
 myContainer.addEventListener('click', handleProductClick);
 // myButton.addEventListener('click', renderResults);
+getProducts();
 
