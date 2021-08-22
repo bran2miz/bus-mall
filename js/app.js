@@ -174,4 +174,3 @@ function renderChart() {
 myContainer.addEventListener('click', handleProductClick);
 // myButton.addEventListener('click', renderResults);
 getProducts();
-
