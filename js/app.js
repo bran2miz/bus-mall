@@ -171,21 +171,6 @@ function renderChart() {
 //   productObj.renderProducts();
 // }
 
-function storeProducts() {
-  let stringifiedProducts = JSON.stringify(allProducts);
-  localStorage.setItem('products', stringifiedProducts);
-  console.log(stringifiedProducts);
-}
-
-function getProducts() {
-  let potentialProducts = localStorage.getItem('products');
-  if (potentialProducts) {
-    let parsedProducts = JSON.parse(potentialProducts);
-    allProducts = parsedProducts;
-    console.log(potentialProducts);
-  }
-}
-
 myContainer.addEventListener('click', handleProductClick);
 // myButton.addEventListener('click', renderResults);
 getProducts();
