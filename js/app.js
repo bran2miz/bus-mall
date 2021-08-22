@@ -165,12 +165,6 @@ function renderChart() {
   let myChart = new Chart(ctx, chartObject);
 }
 
-// function makeAProduct(name, fileExtension = 'jpg', views, clicks) {
-//   let productObj = new Products();
-//   allProducts.push(productObj);
-//   productObj.renderProducts();
-// }
-
 myContainer.addEventListener('click', handleProductClick);
 // myButton.addEventListener('click', renderResults);
 getProducts();
