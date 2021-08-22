@@ -189,4 +189,3 @@ function getProducts() {
 myContainer.addEventListener('click', handleProductClick);
 // myButton.addEventListener('click', renderResults);
 getProducts();
-
