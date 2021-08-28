@@ -1,6 +1,6 @@
 'use strict';
 
-// global variables -----------------------------------------------------------
+// ====================== GLOBAL VARIABLES ======================//
 let allProducts = [];
 // querySelector = method
 let myContainer = document.querySelector('section');
@@ -21,10 +21,16 @@ function Products( name, fileExtension = 'jpg') {
   allProducts.push(this);
 }
 
+// display images
 function selectRandomProduct() {
   return Math.floor(Math.random() * allProducts.length);
 }
 
+  //use the .includes 
+  // .pop() - removes last item
+  // .push() - appends to the end of an array
+  // .shift() - removes the first item
+  // .unshift() - adds to the beginning of an array
 function renderProducts() {
   // call the selectRandomProduct
   while (indexArray.length < uniqueNumberOfIndexes) {
@@ -43,6 +49,8 @@ function renderProducts() {
   //   prod2 = selectRandomProduct();
   //   prod3 = selectRandomProduct();
   // }
+
+  // deleting and adding to the array
   image1.src = allProducts[prod1].src;
   image2.src = allProducts[prod2].src;
   image3.src = allProducts[prod3].src;
@@ -55,6 +63,7 @@ function renderProducts() {
 
 }
 
+// create Local Storage
 function storeAProduct () {
   let stringifyProducts = JSON.stringify(allProducts);
   localStorage.setItem('productstorage',stringifyProducts);
@@ -69,6 +78,7 @@ function getProducts(){
   }
 }
 
+// ====================== EVENT HANDLER ======================//
 function handleProductClick(event) {
   if (event.target === myContainer) {
     alert('Please click on an image');
@@ -87,6 +97,7 @@ function handleProductClick(event) {
 
     myContainer.removeEventListener('click', handleProductClick);
     renderChart();
+    // calling the created storage
     storeAProduct();
   }
   // storeProducts();
@@ -100,6 +111,7 @@ function handleProductClick(event) {
 //   }
 // }
 
+// ====================== NEW INSTANCES ======================//
 new Products('bag');
 new Products('banana');
 new Products('bathroom');
@@ -123,6 +135,8 @@ new Products('wine-glass');
 console.log(allProducts);
 renderProducts();
 
+
+// ====================== CHART DATA ======================//
 function renderChart() {
   let numClicks = [];
   let numViews = [];
@@ -165,7 +179,9 @@ function renderChart() {
   let myChart = new Chart(ctx, chartObject);
 }
 
-
+// ====================== EVENT LISTENER ======================//
 myContainer.addEventListener('click', handleProductClick);
 // myButton.addEventListener('click', renderResults);
+
+// check local storage - see in applications on server
 getProducts();
