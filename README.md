@@ -1,6 +1,8 @@
 Bus Mall 
 
-I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
+This Bus-Mall app was created for the purpose of allowing people to add exciting new shopping items to the local storage, and saves the items even when the page refreshes. The app also renders a chart at the end of how many times a user clicked and/or viewed an item.
+
+I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app.
 
 Author: Brandon Mizutani
 -Collaborated with: Johnny Barragan, Brian Tarte, Christine Lora, Eddie Ponce, Carrie Vo
