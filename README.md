@@ -16,3 +16,7 @@ Links and Resources
 Comments:
 
 Although I found it extremely difficult, through the help of my classmates, I was able to finish this assignment in less than 5 hours. I definitely felt that this assignment would exceeding that by double, considering how arduous creating the token was.
+
+Local Storage
+
+Overall, this project was surprisingly difficult. I felt that the hardest part was to include the fact that my global array was equaled to the parsedProduct variable. If I did not include that, my code remained broken, leaving me clueless for several hours. While I completed the assignment in 3 hours, it was only through my classmates, and the help from Sheyna that I was able to complete this assignment in a proficient and timely manner.
